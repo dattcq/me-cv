@@ -6,7 +6,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "frameworksBackend": {
+      "region": "asia-southeast1"
+    }
   },
   "firestore": {
     "rules": "firestore.rules"
