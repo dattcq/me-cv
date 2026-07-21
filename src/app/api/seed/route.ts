@@ -112,7 +112,7 @@ export async function GET() {
   try {
     await setDoc(doc(db, "cv_data", "truong_dat_profile"), cvData);
     return NextResponse.json({ success: true, message: "Data seeded successfully!" });
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 });
   }
 }

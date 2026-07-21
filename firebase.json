@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "source": ".",
+    "site": "me-cv-web-f94d3",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
