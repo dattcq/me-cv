@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only allow public READ access.
+    // WRITE access is strictly denied for public clients.
+    // Admin operations (like seeding data via /api/seed) must use the Firebase Admin SDK.
+    match /{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

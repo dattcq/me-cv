@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { CVData } from "@/types/cv";
+import { CVData, CVDataSchema } from "@/types/cv";
+import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
 
 import Header from "@/components/Header";
 import CareerObjective from "@/components/CareerObjective";
@@ -11,6 +12,8 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import PersonalProjects from "@/components/PersonalProjects";
 import Education from "@/components/Education";
+import LoadingState from "@/components/LoadingState";
+import ErrorState from "@/components/ErrorState";
 
 export default function CVPage() {
   const [cvData, setCvData] = useState<CVData | null>(null);
@@ -20,10 +23,11 @@ export default function CVPage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const docRef = doc(db, "cv_data", "truong_dat_profile");
+        const docRef = doc(db, FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setCvData(docSnap.data() as CVData);
+          const parsedData = CVDataSchema.parse(docSnap.data());
+          setCvData(parsedData);
         } else {
           setError("Chưa có dữ liệu CV. Hãy chờ hệ thống đẩy dữ liệu lên Firestore.");
         }
@@ -36,8 +40,8 @@ export default function CVPage() {
     fetchData();
   }, []);
 
-  if (loading) return <div className="container"><div className="card">Đang tải dữ liệu CV...</div></div>;
-  if (error) return <div className="container"><div className="card"><h3 className="text-accent">Thông báo</h3><p>{error}</p></div></div>;
+  if (loading) return <LoadingState />;
+  if (error) return <ErrorState error={error} />;
   if (!cvData) return null;
 
   return (

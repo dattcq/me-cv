@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PersonalInfo } from '@/types/cv';
 import styles from './Header.module.css';
 

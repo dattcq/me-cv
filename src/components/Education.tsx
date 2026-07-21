@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Education as EducationType } from '@/types/cv';
 import styles from './Education.module.css';
 
@@ -11,7 +11,7 @@ export default function Education({ education }: EducationProps) {
     <div className="card">
       <h2>🎓 Học vấn</h2>
       {education.map((edu, index) => (
-        <div key={index} className={index !== education.length - 1 ? styles.itemMb : ''}>
+        <div key={`${edu.school}-${edu.period}`} className={index !== education.length - 1 ? styles.itemMb : ''}>
           <div className="flex justify-between items-center">
             <p className={styles.school}><strong>{edu.school}</strong></p>
             <span className={styles.period}>{edu.period}</span>

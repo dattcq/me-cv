@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-
+import { getApps, initializeApp, cert } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
+import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
 const cvData = {
   "personal_info": {
     "name": "TRƯƠNG CÔNG QUỐC ĐẠT",
@@ -108,11 +108,42 @@ const cvData = {
   ]
 };
 
-export async function GET() {
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  if (searchParams.get('secret') !== process.env.SEED_SECRET) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
-    await setDoc(doc(db, "cv_data", "truong_dat_profile"), cvData);
-    return NextResponse.json({ success: true, message: "Data seeded successfully!" });
+    const projectId = process.env.FIREBASE_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    // Handle escaped newlines in private key
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+
+    if (!projectId || !clientEmail || !privateKey) {
+      throw new Error("Missing FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, or FIREBASE_PRIVATE_KEY in environment variables.");
+    }
+
+    if (!getApps().length) {
+      initializeApp({
+        credential: cert({
+          projectId,
+          clientEmail,
+          privateKey,
+        })
+      });
+    }
+
+    const db = getFirestore();
+    const docRef = db.collection(FIRESTORE_COLLECTION).doc(FIRESTORE_DOCUMENT_ID);
+    
+    await docRef.set(cvData);
+    
+    return NextResponse.json({ success: true, message: "Data seeded successfully with Admin SDK!" });
   } catch (error: unknown) {
-    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 });
+    return NextResponse.json(
+      { error: "Lỗi kết nối Admin SDK", details: error instanceof Error ? error.message : String(error) },
+      { status: 500 }
+    );
   }
 }
