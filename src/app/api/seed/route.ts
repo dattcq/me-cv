@@ -28,9 +28,9 @@ const cvData = {
     "Ngôn ngữ & Kiến trúc": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
     "State Management": "GetX, BLoC/Cubit, Riverpod 2.0+, Provider.",
     "Networking & Backend": "RESTful API với Dio Custom Interceptors, Token Refresh và Error Handling, hệ sinh thái Firebase gồm Auth, Cloud Messaging, Crashlytics, Firestore và Storage, Auth0.",
-    "Native & Phần cứng": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, xác thực sinh trắc học TouchID/FaceID, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
+    "Native & Phần cứng": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, TTS (flutter_tts), STT (speech_to_text), xác thực sinh trắc học TouchID/FaceID, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
     "Cơ sở dữ liệu cục bộ": "Isar NoSQL, Secure Storage, SharedPreferences.",
-    "Công cụ & Khác": "Shorebird Hot Code Push, Git, Figma, AI Coding Tools."
+    "Công cụ & Khác": "GitHub Actions (CI/CD), Shorebird Hot Code Push, Git, Figma, AI Coding Tools."
   },
   "experience": [
     {
@@ -100,10 +100,12 @@ const cvData = {
         "Mô tả: Khung kiến trúc phần mềm và bộ tiện ích cốt lõi chuẩn Enterprise được thiết kế để giải quyết các bài toán kỹ thuật phức tạp trong phát triển ứng dụng Flutter quy mô lớn.",
         "Kiến trúc Multi-State Sandbox: Phân lớp độc lập tầng domain và data. Thiết kế và triển khai song song 3 mô hình State Management gồm GetX, BLoC/Cubit và Riverpod 2.0+ cho từng sub-feature, đạt tỷ lệ tái sử dụng 100% logic nghiệp vụ và tầng giao tiếp dữ liệu.",
         "Hệ sinh thái eKYC chuyên sâu: Xây dựng trọn bộ luồng định danh điện tử gồm bóc tách thông tin giấy tờ tùy thân qua Camera OCR, đọc chip CCCD qua cảm biến NFC và kiểm tra thực thể sống chống giả mạo khuôn mặt Liveness Check.",
+        "Tích hợp Voice & AI Features: Phát triển tính năng nhận diện giọng nói (STT với speech_to_text) và chuyển đổi văn bản thành giọng nói (TTS với flutter_tts), tối ưu trải nghiệm tương tác bằng giọng nói mượt mà trên ứng dụng.",
         "Tích hợp Native & Xử lý đa luồng: Xây dựng luồng giao tiếp hai chiều Platform Channels trên iOS/Android để kết nối thiết bị ngoại vi IoT. Tận dụng Dart Isolates xử lý các tác vụ tính toán nặng mà không làm nghẽn UI Thread.",
         "Bản đồ GIS & Đồng bộ Offline: Xử lý theo dõi lịch sử lộ trình GPS thời gian thực, tích hợp cơ sở dữ liệu cục bộ tốc độ cao Isar NoSQL hỗ trợ hoạt động offline và đồng bộ hóa khi có mạng.",
+        "Xây dựng & Thực thi đường ống CI/CD: Cấu hình và triển khai tự động hóa toàn bộ quy trình CI/CD với GitHub Actions (chạy Static Analysis, Unit Test coverage, multi-flavor build) kết hợp Shorebird Code Push để phát hành bản build AAB trực tiếp lên Google Play Store (Alpha track) và đẩy hotfix OTA tức thì.",
         "Chức năng mở rộng & Automation: Tự động khởi tạo và in ấn tài liệu PDF, tích hợp trợ lý ảo AI Chat và tự động hóa kiểm soát chất lượng code bằng script tự viết.",
-        "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates."
+        "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates."
       ]
     },
     {

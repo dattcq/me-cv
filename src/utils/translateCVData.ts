@@ -91,9 +91,9 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
       "Languages & Architecture": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
       "State Management": "GetX, BLoC/Cubit, Riverpod 2.0+, Provider.",
       "Networking & Backend": "RESTful API with Dio Custom Interceptors, Token Refresh & Error Handling, Firebase Ecosystem (Auth, Cloud Messaging, Crashlytics, Firestore, Storage), Auth0.",
-      "Native & Hardware": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, TouchID/FaceID Biometrics, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
+      "Native & Hardware": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, Text-to-Speech (flutter_tts), Speech-to-Text (speech_to_text), TouchID/FaceID Biometrics, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
       "Local Database": "Isar NoSQL, Secure Storage, SharedPreferences.",
-      "Tools & Others": "Shorebird Hot Code Push, Git, Figma, AI Coding Tools.",
+      "Tools & Others": "GitHub Actions (CI/CD), Shorebird Hot Code Push, Git, Figma, AI Coding Tools.",
     },
     experience: [
       {
@@ -165,10 +165,12 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
           "Description: Enterprise-grade software framework and core utility suite designed to solve complex technical challenges in large-scale Flutter applications.",
           "Multi-State Sandbox Architecture: Decoupled domain and data layers. Designed and implemented 3 State Management models (GetX, BLoC/Cubit, Riverpod 2.0+) in parallel for sub-features, achieving 100% logic and data layer reuse.",
           "eKYC Ecosystem: Built complete identity verification workflows including ID card OCR extraction, NFC chip reading, and Liveness Check anti-spoofing.",
+          "Voice & Speech Integration: Implemented Speech-to-Text (speech_to_text) and Text-to-Speech (flutter_tts) capabilities to provide seamless, hands-free voice interactions.",
           "Native Integration & Multi-threading: Built bi-directional Platform Channels on iOS/Android for IoT peripherals. Leveraged Dart Isolates for heavy compute tasks without blocking UI Thread.",
           "GIS Maps & Offline Sync: Handled real-time GPS route tracking, integrated high-speed Isar NoSQL local database for offline support and auto-sync.",
+          "Automated CI/CD Pipeline: Configured and executed continuous integration & delivery using GitHub Actions for static analysis, unit testing, and multi-flavor builds. Streamlined deployment to Google Play Store and OTA hotpatching integrated with Shorebird Code Push.",
           "Extensions & Automation: Automated PDF document generation, integrated AI Chat assistant, and automated code quality scripts.",
-          "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
+          "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
         ],
       },
       {
