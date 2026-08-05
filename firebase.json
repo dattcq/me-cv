@@ -1,15 +1,18 @@
 {
   "hosting": {
-    "source": ".",
-    "site": "me-cv-web-f94d3",
+    "public": "out",
+    "site": "dattcq2596-portfolio",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "frameworksBackend": {
-      "region": "asia-southeast1"
-    }
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "firestore": {
     "rules": "firestore.rules"

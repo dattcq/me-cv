@@ -1,0 +1,116 @@
+export type Language = 'vi' | 'en';
+
+export const translations = {
+  vi: {
+    nav: {
+      about: "Về tôi",
+      skills: "Kỹ năng",
+      experience: "Kinh nghiệm",
+      projects: "Dự án",
+      education: "Học vấn",
+      contact: "Liên hệ",
+      print: "In / PDF",
+    },
+    hero: {
+      badge: "🚀 Flutter Developer Portfolio",
+      subTitle: "Flutter Mobile Developer",
+      description: "Phát triển ứng dụng di động chuẩn Enterprise với Flutter, Clean Architecture, tích hợp các module phần cứng phức tạp (eKYC, NFC, Liveness, Isolates) và tối ưu hóa quy trình làm việc bằng AI Coding Tools.",
+      ctaProjects: "📁 Xem dự án",
+      ctaAbout: "👨‍💻 Về tôi",
+      ctaContact: "✉️ Liên hệ ngay",
+    },
+    about: {
+      heading: "Về tôi & Định hướng sự nghiệp",
+      profileTitle: "Tóm tắt & Định hướng phát triển",
+      stat1Number: "3+ Năm",
+      stat1Title: "Kinh nghiệm Flutter",
+      stat1Desc: "Clean Architecture, GetX, BLoC, Riverpod",
+      stat2Number: "2+ Năm",
+      stat2Title: "Kinh nghiệm QC / Tester",
+      stat2Desc: "Tư duy kiểm thử chặt chẽ & cover edge-cases",
+      addressLabel: "Địa chỉ",
+      emailLabel: "Email",
+      phoneLabel: "Điện thoại",
+    },
+    skills: {
+      heading: "Kỹ năng & Công nghệ (Tech Stack)",
+    },
+    experience: {
+      heading: "Kinh nghiệm Làm việc",
+    },
+    projects: {
+      heading: "Dự án Cá nhân & Nổi bật (Featured Projects)",
+      roleLabel: "Vai trò",
+      techStackLabel: "TECH STACK:",
+      sourceCode: "🔗 Mã nguồn (GitHub)",
+    },
+    education: {
+      heading: "Học vấn & Bằng cấp",
+      majorLabel: "Chuyên ngành",
+    },
+    contact: {
+      heading: "Liên hệ & Kết nối",
+      title: "Sẵn sàng cho các Cơ hội Hợp tác Mới!",
+      description: "Nếu bạn đang tìm kiếm một Flutter Mobile Developer giàu kinh nghiệm, thấu hiểu quy trình kiểm thử và đam mê ứng dụng AI để tối ưu hóa sản phẩm, hãy liên hệ với tôi.",
+      sendEmail: "✉️ Gửi Email",
+      callNow: "📞 Gọi ngay",
+      github: "🐙 GitHub (dattcq)",
+    },
+  },
+  en: {
+    nav: {
+      about: "About Me",
+      skills: "Skills",
+      experience: "Experience",
+      projects: "Projects",
+      education: "Education",
+      contact: "Contact",
+      print: "Print / PDF",
+    },
+    hero: {
+      badge: "🚀 Flutter Developer Portfolio",
+      subTitle: "Flutter Mobile Developer",
+      description: "Building enterprise-grade mobile applications with Flutter & Clean Architecture. Specialized in complex hardware/native modules (eKYC, NFC, Liveness, Isolates) and leveraging AI Coding Tools for maximum engineering productivity.",
+      ctaProjects: "📁 View Projects",
+      ctaAbout: "👨‍💻 About Me",
+      ctaContact: "✉️ Contact Me",
+    },
+    about: {
+      heading: "About Me & Career Direction",
+      profileTitle: "Profile Summary & Objective",
+      stat1Number: "3+ Years",
+      stat1Title: "Flutter Experience",
+      stat1Desc: "Clean Architecture, GetX, BLoC, Riverpod",
+      stat2Number: "2+ Years",
+      stat2Title: "QA / Testing Background",
+      stat2Desc: "Rigorous test design & edge-case coverage",
+      addressLabel: "Address",
+      emailLabel: "Email",
+      phoneLabel: "Phone",
+    },
+    skills: {
+      heading: "Skills & Tech Stack",
+    },
+    experience: {
+      heading: "Work Experience",
+    },
+    projects: {
+      heading: "Featured & Personal Projects",
+      roleLabel: "Role",
+      techStackLabel: "TECH STACK:",
+      sourceCode: "🔗 Source Code (GitHub)",
+    },
+    education: {
+      heading: "Education",
+      majorLabel: "Major",
+    },
+    contact: {
+      heading: "Get In Touch",
+      title: "Open for High-Impact Roles & Collaborations!",
+      description: "Looking for an experienced Flutter Mobile Developer with strong QA/testing mindset and AI-driven workflow efficiency? Feel free to reach out!",
+      sendEmail: "✉️ Send Email",
+      callNow: "📞 Call Now",
+      github: "🐙 GitHub (dattcq)",
+    },
+  },
+};

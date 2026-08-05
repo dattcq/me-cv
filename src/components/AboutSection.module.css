@@ -1,0 +1,87 @@
+.section {
+  padding: 4rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+.statCard {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statNumber {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin-bottom: 0.25rem;
+}
+
+.statTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.statDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.profileCard {
+  padding: 2.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profileTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.profileSummary {
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.goalDivider {
+  border-top: 1px dashed var(--card-border);
+  padding-top: 1rem;
+}
+
+.goalText {
+  line-height: 1.75;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+.avatarColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

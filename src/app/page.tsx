@@ -5,13 +5,17 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { CVData, CVDataSchema } from "@/types/cv";
 import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
+import { Language } from "@/constants/translations";
+import { getTranslatedCVData } from "@/utils/translateCVData";
 
-import Header from "@/components/Header";
-import CareerObjective from "@/components/CareerObjective";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import PersonalProjects from "@/components/PersonalProjects";
-import Education from "@/components/Education";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import EducationSection from "@/components/EducationSection";
+import ContactSection from "@/components/ContactSection";
 import LoadingState from "@/components/LoadingState";
 import ErrorState from "@/components/ErrorState";
 
@@ -19,6 +23,13 @@ export default function CVPage() {
   const [cvData, setCvData] = useState<CVData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [lang, setLang] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("lang") as Language;
+      if (savedLang === "vi" || savedLang === "en") return savedLang;
+    }
+    return "vi";
+  });
 
   useEffect(() => {
     async function fetchData() {
@@ -40,18 +51,34 @@ export default function CVPage() {
     fetchData();
   }, []);
 
+  const handleLanguageChange = (newLang: Language) => {
+    setLang(newLang);
+    localStorage.setItem("lang", newLang);
+  };
+
   if (loading) return <LoadingState />;
   if (error) return <ErrorState error={error} />;
   if (!cvData) return null;
 
+  const displayData = getTranslatedCVData(cvData, lang);
+
   return (
-    <div className="container animate-fade-in">
-      <Header personalInfo={cvData.personal_info} />
-      <CareerObjective objective={cvData.career_objective} />
-      <Skills skills={cvData.skills} />
-      <Experience experience={cvData.experience} />
-      <PersonalProjects projects={cvData.personal_projects || []} />
-      <Education education={cvData.education} />
-    </div>
+    <>
+      <Navbar
+        name={displayData.personal_info.name}
+        lang={lang}
+        onLanguageChange={handleLanguageChange}
+      />
+
+      <main className="main-container">
+        <Hero personalInfo={displayData.personal_info} lang={lang} />
+        <AboutSection objective={displayData.career_objective} lang={lang} />
+        <SkillsSection skills={displayData.skills} lang={lang} />
+        <ExperienceSection experience={displayData.experience} lang={lang} />
+        <ProjectsSection projects={displayData.personal_projects || []} lang={lang} />
+        <EducationSection education={displayData.education} lang={lang} />
+        <ContactSection personalInfo={displayData.personal_info} lang={lang} />
+      </main>
+    </>
   );
 }

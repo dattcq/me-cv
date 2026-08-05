@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { getApps, initializeApp, cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
+
+export const dynamic = "force-static";
+
 const cvData = {
   "personal_info": {
     "name": "TRƯƠNG CÔNG QUỐC ĐẠT",
@@ -18,8 +21,8 @@ const cvData = {
     }
   ],
   "career_objective": {
-    "summary": "Flutter Developer với 3+ năm kinh nghiệm phát triển ứng dụng di động và 2+ năm kinh nghiệm kiểm thử phần mềm QC/Tester. Thành thạo Clean Architecture, GetX, BLoC, Riverpod và tích hợp sâu các module Native/Phần cứng như eKYC, NFC, Liveness Check, GPS Tracking, Bluetooth BLE, Isolates. Sở hữu tư duy kiểm thử chặt chẽ, chủ động ứng dụng AI tools gồm Cursor và Antigravity để tối ưu hiệu suất code và debug.",
-    "goal": "Phát triển thành Full-stack Developer. Trước mắt tập trung tối ưu năng lực Mobile về kiến trúc đa tầng, tối ưu hiệu năng sâu trên iOS/Android và CI/CD, tiếp đến mở rộng sang Backend với Database, RESTful API và Server Deployment để làm chủ toàn bộ vòng đời phát triển sản phẩm phần mềm."
+    "summary": "Tôi là Flutter Developer với hơn 3 năm kinh nghiệm phát triển ứng dụng di động và hơn 2 năm kinh nghiệm trong lĩnh vực kiểm thử phần mềm. Tôi luôn hướng đến việc xây dựng những sản phẩm ổn định, tối ưu hiệu năng và dễ mở rộng, đồng thời không ngừng học hỏi, ứng dụng các công cụ AI để nâng cao hiệu quả phát triển phần mềm.",
+    "goal": "Phát triển trở thành Full-stack Developer, từng bước mở rộng kiến thức từ Mobile sang Backend để có thể tham gia toàn diện vào quá trình xây dựng và phát triển sản phẩm."
   },
   "skills": {
     "Ngôn ngữ & Kiến trúc": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
