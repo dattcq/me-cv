@@ -2,6 +2,7 @@
 
 import { PersonalInfo } from "@/types/cv";
 import { Language, translations } from "@/constants/translations";
+import styles from "./Hero.module.css";
 
 interface HeroProps {
   personalInfo: PersonalInfo;
@@ -12,64 +13,32 @@ export default function Hero({ personalInfo, lang }: HeroProps) {
   const t = translations[lang].hero;
 
   return (
-    <section id="hero" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
-      <div style={{ textAlign: "center", maxWidth: "850px", margin: "0 auto" }}>
+    <section id="hero" className={styles.heroSection}>
+      <div className={styles.container}>
         {/* Badge */}
-        <div style={{ marginBottom: "2rem" }}>
-          <span className="badge" style={{ fontSize: "0.925rem", padding: "0.45rem 1.15rem" }}>
+        <div className={styles.badgeWrapper}>
+          <span className={`badge ${styles.badgeText}`}>
             {t.badge}
           </span>
         </div>
 
-        {/* Name Title with Diacritic Safe Formatting */}
-        <h1
-          style={{
-            fontSize: "clamp(2.5rem, 5.5vw, 4rem)",
-            fontWeight: 800,
-            lineHeight: 1.2,
-            marginBottom: "1rem",
-            letterSpacing: "-0.02em",
-          }}
-        >
+        {/* Name Title */}
+        <h1 className={styles.nameTitle}>
           <span className="gradient-text">{personalInfo.name}</span>
         </h1>
 
         {/* Subtitle Role */}
-        <div
-          style={{
-            fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-            fontWeight: 700,
-            color: "var(--text-primary)",
-            marginBottom: "2.25rem",
-          }}
-        >
+        <div className={styles.subtitle}>
           {t.subTitle}
         </div>
 
         {/* Description Paragraph */}
-        <p
-          style={{
-            fontSize: "1.15rem",
-            color: "var(--text-secondary)",
-            marginBottom: "3.25rem",
-            lineHeight: 1.8,
-            maxWidth: "780px",
-            margin: "0 auto 3.25rem auto",
-          }}
-        >
+        <p className={styles.description}>
           {t.description}
         </p>
 
         {/* CTA Buttons */}
-        <div
-          style={{
-            display: "flex",
-            gap: "1.25rem",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-          className="no-print"
-        >
+        <div className={`${styles.ctaContainer} no-print`}>
           <a href="#experience" className="btn-primary">
             {t.ctaExperience}
           </a>

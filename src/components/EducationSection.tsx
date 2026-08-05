@@ -2,6 +2,7 @@
 
 import { Education } from "@/types/cv";
 import { Language, translations } from "@/constants/translations";
+import styles from "./EducationSection.module.css";
 
 interface EducationSectionProps {
   education: Education[];
@@ -12,7 +13,7 @@ export default function EducationSection({ education, lang }: EducationSectionPr
   const t = translations[lang].education;
 
   return (
-    <section id="education" style={{ padding: "4rem 0" }}>
+    <section id="education" className={styles.section}>
       <h2 className="section-heading">
         <span>🎓</span> {t.heading}
       </h2>
@@ -20,22 +21,14 @@ export default function EducationSection({ education, lang }: EducationSectionPr
       <div className="grid-2">
         {education.map((item, index) => (
           <div key={index} className="card-glass">
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "flex-start",
-                gap: "0.75rem",
-                marginBottom: "0.75rem",
-              }}
-            >
-              <h3 style={{ fontSize: "1.25rem", fontWeight: 800, margin: 0 }}>
+            <div className={styles.cardHeader}>
+              <h3 className={styles.schoolName}>
                 🏫 {item.school}
               </h3>
               <span className="badge">📅 {item.period}</span>
             </div>
 
-            <p style={{ fontWeight: 600, color: "var(--accent-primary)", margin: 0, fontSize: "1.025rem" }}>
+            <p className={styles.majorText}>
               {t.majorLabel}: {item.major}
             </p>
           </div>

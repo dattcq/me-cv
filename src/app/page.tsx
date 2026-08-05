@@ -1,12 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { CVData, CVDataSchema } from "@/types/cv";
-import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
-import { Language } from "@/constants/translations";
-import { getTranslatedCVData } from "@/utils/translateCVData";
+import { useCVData } from "@/hooks/useCVData";
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -20,54 +14,18 @@ import LoadingState from "@/components/LoadingState";
 import ErrorState from "@/components/ErrorState";
 
 export default function CVPage() {
-  const [cvData, setCvData] = useState<CVData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [lang, setLang] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      const savedLang = localStorage.getItem("lang") as Language;
-      if (savedLang === "vi" || savedLang === "en") return savedLang;
-    }
-    return "vi";
-  });
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const docRef = doc(db, FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const parsedData = CVDataSchema.parse(docSnap.data());
-          setCvData(parsedData);
-        } else {
-          setError("Chưa có dữ liệu CV. Hãy chờ hệ thống đẩy dữ liệu lên Firestore.");
-        }
-      } catch (err: unknown) {
-        setError("Lỗi quyền truy cập Firebase: " + (err instanceof Error ? err.message : String(err)));
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const handleLanguageChange = (newLang: Language) => {
-    setLang(newLang);
-    localStorage.setItem("lang", newLang);
-  };
+  const { displayData, loading, error, lang, changeLanguage } = useCVData();
 
   if (loading) return <LoadingState />;
   if (error) return <ErrorState error={error} />;
-  if (!cvData) return null;
-
-  const displayData = getTranslatedCVData(cvData, lang);
+  if (!displayData) return null;
 
   return (
     <>
       <Navbar
         name={displayData.personal_info.name}
         lang={lang}
-        onLanguageChange={handleLanguageChange}
+        onLanguageChange={changeLanguage}
       />
 
       <main className="main-container">

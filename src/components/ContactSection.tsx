@@ -69,8 +69,7 @@ export default function ContactSection({ personalInfo, lang }: ContactSectionPro
             href="https://github.com/dattcq"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ textDecoration: "none" }}
+            className={`btn-primary ${styles.githubBtn}`}
           >
             {t.github}
           </a>

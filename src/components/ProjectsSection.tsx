@@ -2,6 +2,7 @@
 
 import { PersonalProject } from "@/types/cv";
 import { Language, translations } from "@/constants/translations";
+import styles from "./ProjectsSection.module.css";
 
 interface ProjectsSectionProps {
   projects: PersonalProject[];
@@ -14,7 +15,7 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
   if (!projects || projects.length === 0) return null;
 
   return (
-    <section id="projects" style={{ padding: "4rem 0" }}>
+    <section id="projects" className={styles.section}>
       <h2 className="section-heading">
         <span>🚀</span> {t.heading}
       </h2>
@@ -31,61 +32,32 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
           const repoUrl = repoLine ? repoLine.replace(/Mã nguồn:|Source Code:/, "").trim() : null;
 
           return (
-            <div key={index} className="card-glass" style={{ display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  gap: "0.75rem",
-                  marginBottom: "1rem",
-                }}
-              >
+            <div key={index} className={`card-glass ${styles.projectCard}`}>
+              <div className={styles.cardHeader}>
                 <div>
-                  <h3 style={{ fontSize: "1.3rem", fontWeight: 800, margin: 0 }}>
+                  <h3 className={styles.projectName}>
                     {project.name}
                   </h3>
-                  <div
-                    style={{
-                      fontSize: "0.975rem",
-                      fontWeight: 600,
-                      color: "var(--accent-primary)",
-                      marginTop: "0.3rem",
-                    }}
-                  >
+                  <div className={styles.projectRole}>
                     👤 {t.roleLabel}: {project.role}
                   </div>
                 </div>
 
-                <span className="badge" style={{ whiteSpace: "nowrap" }}>
+                <span className={`badge ${styles.periodBadge}`}>
                   📅 {project.period}
                 </span>
               </div>
 
               {descriptionLine && (
-                <p style={{ fontWeight: 500, color: "var(--text-primary)", marginBottom: "1.25rem", lineHeight: 1.7 }}>
+                <p className={styles.description}>
                   {descriptionLine.replace(/Mô tả:|Description:/, "").trim()}
                 </p>
               )}
 
               {bulletDetails.length > 0 && (
-                <ul
-                  style={{
-                    paddingLeft: "1.25rem",
-                    marginBottom: "1.25rem",
-                    flex: 1,
-                  }}
-                >
+                <ul className={styles.detailList}>
                   {bulletDetails.map((detail, dIndex) => (
-                    <li
-                      key={dIndex}
-                      style={{
-                        fontSize: "0.925rem",
-                        marginBottom: "0.5rem",
-                        color: "var(--text-secondary)",
-                        lineHeight: 1.6,
-                      }}
-                    >
+                    <li key={dIndex} className={styles.detailItem}>
                       {detail}
                     </li>
                   ))}
@@ -93,25 +65,16 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
               )}
 
               {techStackLine && (
-                <div style={{ marginTop: "auto", paddingTop: "1rem" }}>
-                  <div
-                    style={{
-                      fontSize: "0.8rem",
-                      fontWeight: 700,
-                      textTransform: "uppercase",
-                      color: "var(--text-secondary)",
-                      marginBottom: "0.6rem",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
+                <div className={styles.techStackWrapper}>
+                  <div className={styles.techStackLabel}>
                     {t.techStackLabel}
                   </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+                  <div className={styles.techBadges}>
                     {techStackLine
                       .replace("Tech Stack:", "")
                       .split(",")
                       .map((tech, tIndex) => (
-                        <span key={tIndex} className="badge" style={{ fontSize: "0.775rem" }}>
+                        <span key={tIndex} className={`badge ${styles.techBadge}`}>
                           {tech.trim()}
                         </span>
                       ))}
@@ -120,13 +83,12 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
               )}
 
               {repoUrl && (
-                <div style={{ marginTop: "1.25rem", paddingTop: "1rem", borderTop: "1px dashed var(--card-border)" }}>
+                <div className={styles.repoWrapper}>
                   <a
                     href={repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary"
-                    style={{ padding: "0.5rem 1rem", fontSize: "0.875rem", width: "fit-content" }}
+                    className={`btn-secondary ${styles.repoBtn}`}
                   >
                     {t.sourceCode}
                   </a>

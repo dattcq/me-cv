@@ -60,6 +60,10 @@
   margin-bottom: 2rem;
 }
 
+.githubBtn {
+  text-decoration: none;
+}
+
 .footerText {
   font-size: 0.9rem;
   color: var(--text-secondary);
