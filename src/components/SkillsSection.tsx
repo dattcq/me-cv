@@ -1,6 +1,7 @@
 "use client";
 
 import { Language, translations } from "@/constants/translations";
+import styles from "./SkillsSection.module.css";
 
 interface SkillsSectionProps {
   skills: Record<string, string>;
@@ -20,19 +21,12 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
   };
 
   return (
-    <section id="skills" style={{ padding: "4rem 0" }}>
+    <section id="skills" className={styles.section}>
       <h2 className="section-heading">
         <span>⚡</span> {t.heading}
       </h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "2rem",
-          alignItems: "stretch",
-        }}
-      >
+      <div className={styles.grid}>
         {Object.entries(skills).map(([category, itemsStr]) => {
           const items = itemsStr.split(",").map((item) => item.trim());
           const icon = getCategoryIcon(category);
@@ -40,25 +34,14 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
           return (
             <div
               key={category}
-              className="card-glass"
-              style={{ display: "flex", flexDirection: "column", height: "100%", padding: "2rem" }}
+              className={`card-glass ${styles.card}`}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.6rem",
-                  fontSize: "1.15rem",
-                  fontWeight: 700,
-                  marginBottom: "1.25rem",
-                  color: "var(--text-primary)",
-                }}
-              >
+              <div className={styles.header}>
                 <span>{icon}</span>
                 <span>{category}</span>
               </div>
 
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginTop: "auto" }}>
+              <div className={styles.badges}>
                 {items.map((item, index) => (
                   <span key={index} className="badge">
                     {item}

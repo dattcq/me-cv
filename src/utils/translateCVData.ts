@@ -64,9 +64,19 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
             ],
           },
           {
-            name: "3. NextShop, Tingbox & NextLend Ecosystem",
+            name: "3. Tingbox (formerly MPOS360) – Merchant Management App",
             details: [
-              "Assisted in UI development and bug fixing for auxiliary apps within the NextPay ecosystem.",
+              "Description: Merchant management application for mPOS partners, enabling efficient transaction tracking and real-time transaction notifications via MQTT.",
+              "Responsibilities & Engineering: Assisted in bug fixes, UI development, and handling minor tasks as required by the project.",
+              "Tech Stack: Flutter, GetX, ScreenUtil, Local Auth, InAppWebView, Dio, Firebase, Shorebird, MQTT.",
+            ],
+          },
+          {
+            name: "4. NextShop – Sales Management App",
+            details: [
+              "Description: Sales management solution empowering retail stores to monitor business operations and manage inventory effectively on mobile devices.",
+              "Responsibilities & Engineering: Assisted in bug fixes, UI development, and handling minor tasks as required by the project.",
+              "Tech Stack: Flutter, Provider + MobX, ScreenUtil, Local Auth, InAppWebView, Dio, Firebase.",
             ],
           },
         ],

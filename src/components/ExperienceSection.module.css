@@ -1,0 +1,86 @@
+.section {
+  padding: 4rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.company {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.role {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-top: 0.35rem;
+}
+
+.periodBadge {
+  background-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  padding: 0.45rem 1rem;
+}
+
+.description {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.projectCard {
+  background: var(--bg-color);
+  padding: 1.35rem;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+}
+
+.projectName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.detailsList {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.detailsListWithTech {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.detailItem {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.techStackContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.techBadge {
+  font-size: 0.775rem;
+  padding: 0.25rem 0.65rem;
+}

@@ -61,9 +61,19 @@ const cvData = {
           ]
         },
         {
-          "name": "3. Hệ sinh thái NextShop, Tingbox, NextLend",
+          "name": "3. Tingbox (trước đây là MPOS360) – Ứng dụng quản lý Merchant",
           "details": [
-            "Hỗ trợ phát triển và fix bug giao diện cho các ứng dụng phụ trợ trong hệ sinh thái NextPay."
+            "Mô tả: Ứng dụng quản lý dành cho các đối tác mPOS, giúp theo dõi giao dịch một cách hiệu quả và nhận thông báo giao dịch theo thời gian thực thông qua MQTT.",
+            "Nhiệm vụ & Kỹ thuật: Hỗ trợ fix bugs, phát triển UI, thực hiện các task nhỏ khi dự án cần.",
+            "Tech Stack: Flutter, GetX, ScreenUtil, Local Auth, InAppWebView, Dio, Firebase, Shorebird, MQTT."
+          ]
+        },
+        {
+          "name": "4. NextShop – Ứng dụng quản lý bán hàng",
+          "details": [
+            "Mô tả: Giải pháp quản lý bán hàng giúp các cửa hàng theo dõi hoạt động kinh doanh và quản lý hàng tồn kho hiệu quả trên thiết bị di động.",
+            "Nhiệm vụ & Kỹ thuật: Hỗ trợ fix bugs, phát triển UI, thực hiện các task nhỏ khi dự án cần.",
+            "Tech Stack: Flutter, Provider + MobX, ScreenUtil, Local Auth, InAppWebView, Dio, Firebase."
           ]
         }
       ]

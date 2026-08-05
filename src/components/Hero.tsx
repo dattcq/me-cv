@@ -70,11 +70,11 @@ export default function Hero({ personalInfo, lang }: HeroProps) {
           }}
           className="no-print"
         >
-          <a href="#projects" className="btn-primary">
-            {t.ctaProjects}
+          <a href="#experience" className="btn-primary">
+            {t.ctaExperience}
           </a>
-          <a href="#about" className="btn-secondary">
-            {t.ctaAbout}
+          <a href="#projects" className="btn-secondary">
+            {t.ctaProjects}
           </a>
           <a href="#contact" className="btn-secondary">
             {t.ctaContact}
