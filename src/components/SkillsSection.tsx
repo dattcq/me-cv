@@ -32,40 +32,38 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
       </h2>
 
       <div className={styles.container}>
-        {/* Left Block: 6 smaller categories organized in an inner 3x2 grid */}
-        <div className={`card-glass ${styles.leftBlock}`}>
-          <div className={styles.subGrid}>
-            {subEntries.map(([category, itemsStr]) => {
-              const items = itemsStr.split(",").map((item) => item.trim());
-              const icon = getCategoryIcon(category);
+        {/* Left Side: 6 individual card-glass elements in a 3x2 grid */}
+        <div className={styles.leftGrid}>
+          {subEntries.map(([category, itemsStr]) => {
+            const items = itemsStr.split(",").map((item) => item.trim());
+            const icon = getCategoryIcon(category);
 
-              return (
-                <div key={category} className={styles.subCard}>
-                  <div className={styles.header}>
-                    <span>{icon}</span>
-                    <span>{category}</span>
-                  </div>
-                  <div className={styles.badges}>
-                    {items.map((item, index) => (
-                      <span key={index} className="badge">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+            return (
+              <div key={category} className={`card-glass ${styles.card}`}>
+                <div className={styles.header}>
+                  <span>{icon}</span>
+                  <span>{category}</span>
                 </div>
-              );
-            })}
-          </div>
+                <div className={styles.badges}>
+                  {items.map((item, index) => (
+                    <span key={index} className="badge">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Right Block: Native & Hardware */}
+        {/* Right Side: 1 tall card-glass element for Native & Hardware matching total height */}
         {nativeEntry && (() => {
           const [category, itemsStr] = nativeEntry;
           const items = itemsStr.split(",").map((item) => item.trim());
           const icon = getCategoryIcon(category);
 
           return (
-            <div className={`card-glass ${styles.rightBlock}`}>
+            <div className={`card-glass ${styles.tallCard}`}>
               <div className={styles.header}>
                 <span>{icon}</span>
                 <span>{category}</span>
