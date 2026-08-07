@@ -12,13 +12,13 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
           "Phát triển trở thành Full-stack Developer, từng bước mở rộng kiến thức từ Mobile sang Backend để có thể tham gia toàn diện vào quá trình xây dựng và phát triển sản phẩm.",
       },
       skills: {
-        "Ngôn ngữ & Kiến trúc": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
-        "State Management": "GetX, BLoC/Cubit, Riverpod 2.0+, Provider.",
-        "Networking & Backend": "RESTful API với Dio Custom Interceptors, Token Refresh và Error Handling, hệ sinh thái Firebase gồm Auth, Cloud Messaging, Crashlytics, Firestore và Storage, Auth0.",
-        "Native & Phần cứng": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, TTS (flutter_tts), STT (speech_to_text), xác thực sinh trắc học TouchID/FaceID, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
-        "Cơ sở dữ liệu cục bộ": "Isar NoSQL, Secure Storage, SharedPreferences.",
-        "CI/CD & Tự động hóa": "GitHub Actions, Fastlane, Codemagic, Shorebird Hot Code Push.",
-        "Công cụ & Khác": "Git, Figma, AI Coding Tools."
+        "Ngôn ngữ & Kiến trúc": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt",
+        "State Management": "GetX, BLoC/Cubit, Riverpod, Provider",
+        "Networking & Backend": "RESTful API, Dio, Firebase, Auth0",
+        "Native & Phần cứng": "Google Maps, Geolocation, Camera, OCR, NFC, Face Detection, TTS, STT, Biometrics (TouchID/FaceID), InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates",
+        "Cơ sở dữ liệu cục bộ": "Isar NoSQL, Secure Storage, SharedPreferences",
+        "CI/CD & Tự động hóa": "GitHub Actions, Fastlane, Codemagic, Shorebird Code Push",
+        "Công cụ & Khác": "Git, Figma, AI Coding Tools"
       },
       experience: [
         {
@@ -128,13 +128,13 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
         "Develop into a Full-stack Developer, step by step expanding knowledge from Mobile to Backend to fully participate in the product end-to-end development lifecycle.",
     },
     skills: {
-      "Languages & Architecture": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
-      "State Management": "GetX, BLoC/Cubit, Riverpod 2.0+, Provider.",
-      "Networking & Backend": "RESTful API with Dio Custom Interceptors, Token Refresh & Error Handling, Firebase Ecosystem (Auth, Cloud Messaging, Crashlytics, Firestore, Storage), Auth0.",
-      "Native & Hardware": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, Text-to-Speech (flutter_tts), Speech-to-Text (speech_to_text), TouchID/FaceID Biometrics, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
-      "Local Database": "Isar NoSQL, Secure Storage, SharedPreferences.",
-      "CI/CD & Automation": "GitHub Actions, Fastlane, Codemagic, Shorebird Hot Code Push.",
-      "Tools & Others": "Git, Figma, AI Coding Tools.",
+      "Languages & Architecture": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt",
+      "State Management": "GetX, BLoC/Cubit, Riverpod, Provider",
+      "Networking & Backend": "RESTful API, Dio, Firebase, Auth0",
+      "Native & Hardware": "Google Maps, Geolocation, Camera, OCR, NFC, Face Detection, TTS, STT, Biometrics (TouchID/FaceID), InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates",
+      "Local Database": "Isar NoSQL, Secure Storage, SharedPreferences",
+      "CI/CD & Automation": "GitHub Actions, Fastlane, Codemagic, Shorebird Code Push",
+      "Tools & Others": "Git, Figma, AI Coding Tools",
     },
     experience: [
       {
