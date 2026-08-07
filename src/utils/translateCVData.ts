@@ -11,6 +11,15 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
         goal:
           "Phát triển trở thành Full-stack Developer, từng bước mở rộng kiến thức từ Mobile sang Backend để có thể tham gia toàn diện vào quá trình xây dựng và phát triển sản phẩm.",
       },
+      skills: {
+        "Ngôn ngữ & Kiến trúc": "Dart, Flutter, Clean Architecture, Feature-driven Architecture, GetIt.",
+        "State Management": "GetX, BLoC/Cubit, Riverpod 2.0+, Provider.",
+        "Networking & Backend": "RESTful API với Dio Custom Interceptors, Token Refresh và Error Handling, hệ sinh thái Firebase gồm Auth, Cloud Messaging, Crashlytics, Firestore và Storage, Auth0.",
+        "Native & Phần cứng": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, TTS (flutter_tts), STT (speech_to_text), xác thực sinh trắc học TouchID/FaceID, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
+        "Cơ sở dữ liệu cục bộ": "Isar NoSQL, Secure Storage, SharedPreferences.",
+        "CI/CD & Tự động hóa": "GitHub Actions, Fastlane, Codemagic, Shorebird Hot Code Push.",
+        "Công cụ & Khác": "Git, Figma, AI Coding Tools."
+      },
       experience: [
         {
           company: "CÔNG TY CP CÔNG NGHỆ VI MÔ",
