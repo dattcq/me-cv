@@ -104,7 +104,7 @@ const cvData = {
         "Tích hợp Voice & AI Features: Phát triển tính năng nhận diện giọng nói (STT với speech_to_text) và chuyển đổi văn bản thành giọng nói (TTS với flutter_tts), tối ưu trải nghiệm tương tác bằng giọng nói mượt mà trên ứng dụng.",
         "Tích hợp Native & Xử lý đa luồng: Xây dựng luồng giao tiếp hai chiều Platform Channels trên iOS/Android để kết nối thiết bị ngoại vi IoT. Tận dụng Dart Isolates xử lý các tác vụ tính toán nặng mà không làm nghẽn UI Thread.",
         "Bản đồ GIS & Đồng bộ Offline: Xử lý theo dõi lịch sử lộ trình GPS thời gian thực, tích hợp cơ sở dữ liệu cục bộ tốc độ cao Isar NoSQL hỗ trợ hoạt động offline và đồng bộ hóa khi có mạng.",
-        "Xây dựng & Thực thi đường ống CI/CD: Cấu hình và triển khai tự động hóa toàn bộ quy trình CI/CD với GitHub Actions, Fastlane và Codemagic (chạy Static Analysis, Unit Test coverage, multi-flavor build) kết hợp Shorebird Code Push để phát hành bản build AAB trực tiếp lên Google Play Store (Alpha track) và đẩy hotfix OTA tức thì.",
+        "Xây dựng & Thực thi đường ống CI/CD: Cấu hình và triển khai tự động hóa toàn bộ quy trình CI/CD với GitHub Actions, Fastlane và Codemagic kết hợp Shorebird Code Push để phát hành bản build AAB trực tiếp lên Google Play Store và đẩy hotfix OTA tức thì.",
         "Chức năng mở rộng & Automation: Tự động khởi tạo và in ấn tài liệu PDF, tích hợp trợ lý ảo AI Chat và tự động hóa kiểm soát chất lượng code bằng script tự viết.",
         "Mã nguồn: https://github.com/dattcq/me_tools_demo",
         "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Fastlane, Codemagic, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates."

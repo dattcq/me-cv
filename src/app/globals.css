@@ -229,8 +229,10 @@ h1, h2, h3, h4 {
 
 /* Circular Zoomed Avatar Frame */
 .avatar-circle-wrapper {
-  width: 340px;
-  height: 340px;
+  width: 372px;
+  height: 372px;
+  max-width: 90vw;
+  max-height: 90vw;
   border-radius: 50%;
   padding: 4px;
   background: var(--accent-gradient);
