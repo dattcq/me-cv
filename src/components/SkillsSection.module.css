@@ -5,15 +5,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 2rem;
-  align-items: stretch;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 2rem;
+  height: auto;
+  padding: 1.5rem;
 }
 
 @media (max-width: 640px) {
