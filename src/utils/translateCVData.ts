@@ -84,9 +84,10 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
             "Tích hợp Voice & AI Features: Phát triển tính năng nhận diện giọng nói (STT với speech_to_text) và chuyển đổi văn bản thành giọng nói (TTS với flutter_tts), tối ưu trải nghiệm tương tác bằng giọng nói mượt mà trên ứng dụng.",
             "Tích hợp Native & Xử lý đa luồng: Xây dựng luồng giao tiếp hai chiều Platform Channels trên iOS/Android để kết nối thiết bị ngoại vi IoT. Tận dụng Dart Isolates xử lý các tác vụ tính toán nặng mà không làm nghẽn UI Thread.",
             "Bản đồ GIS & Đồng bộ Offline: Xử lý theo dõi lịch sử lộ trình GPS thời gian thực, tích hợp cơ sở dữ liệu cục bộ tốc độ cao Isar NoSQL hỗ trợ hoạt động offline và đồng bộ hóa khi có mạng.",
-            "Xây dựng & Thực thi đường ống CI/CD: Cấu hình và triển khai tự động hóa toàn bộ quy trình CI/CD với GitHub Actions (chạy Static Analysis, Unit Test coverage, multi-flavor build) kết hợp Shorebird Code Push để phát hành bản build AAB trực tiếp lên Google Play Store (Alpha track) và đẩy hotfix OTA tức thì.",
+            "Xây dựng & Thực thi đường ống CI/CD: Cấu hình và triển khai tự động hóa toàn bộ quy trình CI/CD với GitHub Actions, Fastlane và Codemagic (chạy Static Analysis, Unit Test coverage, multi-flavor build) kết hợp Shorebird Code Push để phát hành bản build AAB trực tiếp lên Google Play Store (Alpha track) và đẩy hotfix OTA tức thì.",
             "Chức năng mở rộng & Automation: Tự động khởi tạo và in ấn tài liệu PDF, tích hợp trợ lý ảo AI Chat và tự động hóa kiểm soát chất lượng code bằng script tự viết.",
-            "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
+            "Mã nguồn: https://github.com/dattcq/me_tools_demo",
+            "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Fastlane, Codemagic, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
           ],
         },
         {
@@ -123,7 +124,8 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
       "Networking & Backend": "RESTful API with Dio Custom Interceptors, Token Refresh & Error Handling, Firebase Ecosystem (Auth, Cloud Messaging, Crashlytics, Firestore, Storage), Auth0.",
       "Native & Hardware": "Google Maps SDK, Geolocation, Camera, OCR Text Recognition, NFC Kit, ML Kit Face Detection, Text-to-Speech (flutter_tts), Speech-to-Text (speech_to_text), TouchID/FaceID Biometrics, InAppWebView, Local Notifications, Background Services, Platform Channels, Isolates.",
       "Local Database": "Isar NoSQL, Secure Storage, SharedPreferences.",
-      "Tools & Others": "GitHub Actions (CI/CD), Shorebird Hot Code Push, Git, Figma, AI Coding Tools.",
+      "CI/CD & Automation": "GitHub Actions, Fastlane, Codemagic, Shorebird Hot Code Push.",
+      "Tools & Others": "Git, Figma, AI Coding Tools.",
     },
     experience: [
       {
@@ -198,9 +200,10 @@ export function getTranslatedCVData(data: CVData, lang: Language): CVData {
           "Voice & Speech Integration: Implemented Speech-to-Text (speech_to_text) and Text-to-Speech (flutter_tts) capabilities to provide seamless, hands-free voice interactions.",
           "Native Integration & Multi-threading: Built bi-directional Platform Channels on iOS/Android for IoT peripherals. Leveraged Dart Isolates for heavy compute tasks without blocking UI Thread.",
           "GIS Maps & Offline Sync: Handled real-time GPS route tracking, integrated high-speed Isar NoSQL local database for offline support and auto-sync.",
-          "Automated CI/CD Pipeline: Configured and executed continuous integration & delivery using GitHub Actions for static analysis, unit testing, and multi-flavor builds. Streamlined deployment to Google Play Store and OTA hotpatching integrated with Shorebird Code Push.",
+          "Automated CI/CD Pipeline: Configured and executed continuous integration & delivery using GitHub Actions, Fastlane, and Codemagic for static analysis, unit testing, and multi-flavor builds. Streamlined deployment to Google Play Store and OTA hotpatching integrated with Shorebird Code Push.",
           "Extensions & Automation: Automated PDF document generation, integrated AI Chat assistant, and automated code quality scripts.",
-          "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
+          "Source Code: https://github.com/dattcq/me_tools_demo",
+          "Tech Stack: Dart 3.8+, Flutter, GetX, BLoC, Riverpod, flutter_tts, speech_to_text, GitHub Actions, Fastlane, Codemagic, Shorebird, GetIt, Isar NoSQL, Google ML Kit OCR/Face Detection, NFC Kit, Platform Channels, Isolates.",
         ],
       },
       {
