@@ -20,7 +20,7 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
         <span>🚀</span> {t.heading}
       </h2>
 
-      <div className="grid-2">
+      <div className={styles.projectsStack}>
         {projects.map((project, index) => {
           const techStackLine = project.details.find((d) => d.startsWith("Tech Stack:"));
           const repoLine = project.details.find((d) => d.startsWith("Mã nguồn:") || d.startsWith("Source Code:"));
