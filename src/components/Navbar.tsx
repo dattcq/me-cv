@@ -32,9 +32,7 @@ export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
     setDarkMode(isDarkNow);
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
+
 
   const toggleLanguage = () => {
     const newLang: Language = lang === "vi" ? "en" : "vi";
@@ -102,14 +100,16 @@ export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
             {darkMode ? "☀️" : "🌙"}
           </button>
 
-          {/* Print Button */}
-          <button
-            onClick={handlePrint}
-            className="btn-primary no-print"
-            title="Print or Save as PDF"
+          {/* Download PDF Button — icon only */}
+          <a
+            href="/portfolio.pdf"
+            download="TruongCongQuocDat_FlutterDev_CV.pdf"
+            className="icon-btn no-print"
+            title="Download CV as PDF"
+            aria-label="Download CV as PDF"
           >
-            🖨️ {t.print}
-          </button>
+            📥
+          </a>
 
           <button
             className="mobile-menu-btn no-print"
