@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { CVData, CVDataSchema } from "@/types/cv";
 import { FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID } from "@/constants/firebase";
+import { initialCVData } from "@/constants/initialCVData";
 import { Language } from "@/constants/translations";
 import { getTranslatedCVData } from "@/utils/translateCVData";
 
@@ -20,7 +21,7 @@ export interface UseCVDataReturn {
 export function useCVData(): UseCVDataReturn {
   const [cvData, setCvData] = useState<CVData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
+  const error = "";
   const [lang, setLang] = useState<Language>(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("lang") as Language;
@@ -38,12 +39,11 @@ export function useCVData(): UseCVDataReturn {
           const parsedData = CVDataSchema.parse(docSnap.data());
           setCvData(parsedData);
         } else {
-          setError("Chưa có dữ liệu CV. Hãy chờ hệ thống đẩy dữ liệu lên Firestore.");
+          setCvData(initialCVData);
         }
       } catch (err: unknown) {
-        setError(
-          "Lỗi truy cập Firebase: " + (err instanceof Error ? err.message : String(err))
-        );
+        console.warn("Firestore fetch warning, using fallback local data:", err);
+        setCvData(initialCVData);
       } finally {
         setLoading(false);
       }

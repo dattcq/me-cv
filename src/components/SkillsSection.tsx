@@ -16,8 +16,9 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
     if (category.includes("State")) return "🧩";
     if (category.includes("Networking") || category.includes("Backend")) return "🌐";
     if (category.includes("Native") || category.includes("Hardware")) return "📲";
+    if (category.includes("eKYC")) return "🛡️";
     if (category.includes("Cơ sở dữ liệu") || category.includes("Database") || category.includes("Local")) return "💾";
-    if (category.includes("CI/CD") || category.includes("Automation")) return "🚀";
+    if (category.includes("CI/CD") || category.includes("Automation") || category.includes("Release")) return "🚀";
     return "🛠️";
   };
 
