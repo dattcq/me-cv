@@ -1,6 +1,6 @@
 .heroSection {
   padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .container {
@@ -38,12 +38,5 @@
   color: var(--text-secondary);
   line-height: 1.8;
   max-width: 780px;
-  margin: 0 auto 3.25rem auto;
-}
-
-.ctaContainer {
-  display: flex;
-  gap: 1.25rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 0 auto;
 }

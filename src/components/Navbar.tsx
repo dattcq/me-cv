@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Language, translations } from "@/constants/translations";
+import { Language } from "@/constants/translations";
 
 interface NavbarProps {
   name: string;
@@ -11,8 +11,6 @@ interface NavbarProps {
 
 export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
   const [darkMode, setDarkMode] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = translations[lang].nav;
 
   useEffect(() => {
     // Check initial preference from localStorage or system theme
@@ -32,8 +30,6 @@ export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
     setDarkMode(isDarkNow);
   };
 
-
-
   const toggleLanguage = () => {
     const newLang: Language = lang === "vi" ? "en" : "vi";
     onLanguageChange(newLang);
@@ -45,39 +41,6 @@ export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
         <a href="#hero" className="brand-logo">
           <span>{name}</span>
         </a>
-
-        <ul className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
-          <li>
-            <a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.about}
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.skills}
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.experience}
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.projects}
-            </a>
-          </li>
-          <li>
-            <a href="#education" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.education}
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {t.contact}
-            </a>
-          </li>
-        </ul>
 
         <div className="nav-actions">
           {/* Language Selector Button ("VI" / "EN") */}
@@ -110,14 +73,6 @@ export default function Navbar({ name, lang, onLanguageChange }: NavbarProps) {
           >
             📥
           </a>
-
-          <button
-            className="mobile-menu-btn no-print"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? "✕" : "☰"}
-          </button>
         </div>
       </div>
     </header>

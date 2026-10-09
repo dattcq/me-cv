@@ -12,19 +12,18 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
   const t = translations[lang].skills;
 
   const getCategoryIcon = (category: string) => {
-    if (category.includes("Ngôn ngữ") || category.includes("Language")) return "⚡";
+    if (category.includes("Phương pháp") || category.includes("Methodology") || category.includes("Kiến trúc")) return "🛠️";
     if (category.includes("State")) return "🧩";
-    if (category.includes("Networking") || category.includes("Backend")) return "🌐";
+    if (category.includes("eKYC") || category.includes("Bảo mật") || category.includes("Security")) return "🛡️";
     if (category.includes("Native") || category.includes("Hardware")) return "📲";
-    if (category.includes("eKYC")) return "🛡️";
+    if (category.includes("Networking") || category.includes("Backend")) return "🌐";
     if (category.includes("Cơ sở dữ liệu") || category.includes("Database") || category.includes("Local")) return "💾";
-    if (category.includes("CI/CD") || category.includes("Automation") || category.includes("Release")) return "🚀";
-    return "🛠️";
+    if (category.includes("CI/CD") || category.includes("DevOps") || category.includes("Automation")) return "🚀";
+    if (category.includes("Công cụ") || category.includes("Tools")) return "⚡";
+    return "💻";
   };
 
   const entries = Object.entries(skills);
-  const nativeEntry = entries.find(([cat]) => cat.includes("Native") || cat.includes("Hardware"));
-  const subEntries = entries.filter(([cat]) => !cat.includes("Native") && !cat.includes("Hardware"));
 
   return (
     <section id="skills" className={styles.section}>
@@ -32,42 +31,16 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
         <span>⚡</span> {t.heading}
       </h2>
 
-      <div className={styles.container}>
-        {/* Left Side: 6 individual card-glass elements in a 3x2 grid */}
-        <div className={styles.leftGrid}>
-          {subEntries.map(([category, itemsStr]) => {
-            const items = itemsStr.split(",").map((item) => item.trim());
-            const icon = getCategoryIcon(category);
-
-            return (
-              <div key={category} className={`card-glass ${styles.card}`}>
-                <div className={styles.header}>
-                  <span>{icon}</span>
-                  <span>{category}</span>
-                </div>
-                <div className={styles.badges}>
-                  {items.map((item, index) => (
-                    <span key={index} className="badge">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Right Side: 1 tall card-glass element for Native & Hardware matching total height */}
-        {nativeEntry && (() => {
-          const [category, itemsStr] = nativeEntry;
+      <div className={styles.grid}>
+        {entries.map(([category, itemsStr]) => {
           const items = itemsStr.split(",").map((item) => item.trim());
           const icon = getCategoryIcon(category);
 
           return (
-            <div className={`card-glass ${styles.tallCard}`}>
+            <div key={category} className={`card-glass ${styles.card}`}>
               <div className={styles.header}>
-                <span>{icon}</span>
-                <span>{category}</span>
+                <span className={styles.icon}>{icon}</span>
+                <span className={styles.title}>{category}</span>
               </div>
               <div className={styles.badges}>
                 {items.map((item, index) => (
@@ -78,7 +51,7 @@ export default function SkillsSection({ skills, lang }: SkillsSectionProps) {
               </div>
             </div>
           );
-        })()}
+        })}
       </div>
     </section>
   );

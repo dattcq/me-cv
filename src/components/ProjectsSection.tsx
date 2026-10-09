@@ -56,11 +56,23 @@ export default function ProjectsSection({ projects, lang }: ProjectsSectionProps
 
               {bulletDetails.length > 0 && (
                 <ul className={styles.detailList}>
-                  {bulletDetails.map((detail, dIndex) => (
-                    <li key={dIndex} className={styles.detailItem}>
-                      {detail}
-                    </li>
-                  ))}
+                  {bulletDetails.map((detail, dIndex) => {
+                    const colonIndex = detail.indexOf(":");
+                    if (colonIndex > 0 && colonIndex < 45) {
+                      const prefix = detail.slice(0, colonIndex);
+                      const rest = detail.slice(colonIndex + 1);
+                      return (
+                        <li key={dIndex} className={styles.detailItem}>
+                          <strong className={styles.detailLabel}>{prefix}:</strong>{rest}
+                        </li>
+                      );
+                    }
+                    return (
+                      <li key={dIndex} className={styles.detailItem}>
+                        {detail}
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
 

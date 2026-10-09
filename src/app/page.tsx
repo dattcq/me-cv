@@ -3,6 +3,7 @@
 import { useCVData } from "@/hooks/useCVData";
 
 import Navbar from "@/components/Navbar";
+import SideNavbar from "@/components/SideNavbar";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -27,6 +28,7 @@ export default function CVPage() {
         lang={lang}
         onLanguageChange={changeLanguage}
       />
+      <SideNavbar lang={lang} />
 
       <main className="main-container">
         <Hero personalInfo={displayData.personal_info} lang={lang} />

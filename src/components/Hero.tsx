@@ -36,19 +36,6 @@ export default function Hero({ personalInfo, lang }: HeroProps) {
         <p className={styles.description}>
           {t.description}
         </p>
-
-        {/* CTA Buttons */}
-        <div className={`${styles.ctaContainer} no-print`}>
-          <a href="#experience" className="btn-primary">
-            {t.ctaExperience}
-          </a>
-          <a href="#projects" className="btn-secondary">
-            {t.ctaProjects}
-          </a>
-          <a href="#contact" className="btn-secondary">
-            {t.ctaContact}
-          </a>
-        </div>
       </div>
     </section>
   );

@@ -57,11 +57,23 @@ export default function ExperienceSection({ experience, lang }: ExperienceSectio
                         </h4>
 
                         <ul className={techStackLine ? styles.detailsListWithTech : styles.detailsList}>
-                          {otherDetails.map((detail, dIndex) => (
-                            <li key={dIndex} className={styles.detailItem}>
-                              {detail}
-                            </li>
-                          ))}
+                          {otherDetails.map((detail, dIndex) => {
+                            const colonIndex = detail.indexOf(":");
+                            if (colonIndex > 0 && colonIndex < 45) {
+                              const prefix = detail.slice(0, colonIndex);
+                              const rest = detail.slice(colonIndex + 1);
+                              return (
+                                <li key={dIndex} className={styles.detailItem}>
+                                  <strong className={styles.detailLabel}>{prefix}:</strong>{rest}
+                                </li>
+                              );
+                            }
+                            return (
+                              <li key={dIndex} className={styles.detailItem}>
+                                {detail}
+                              </li>
+                            );
+                          })}
                         </ul>
 
                         {techStackLine && (
@@ -86,11 +98,23 @@ export default function ExperienceSection({ experience, lang }: ExperienceSectio
               {exp.details && exp.details.length > 0 && (
                 <div className={styles.projectCard}>
                   <ul className={styles.detailsList}>
-                    {exp.details.map((detail, dIndex) => (
-                      <li key={dIndex} className={styles.detailItem}>
-                        {detail}
-                      </li>
-                    ))}
+                    {exp.details.map((detail, dIndex) => {
+                      const colonIndex = detail.indexOf(":");
+                      if (colonIndex > 0 && colonIndex < 45) {
+                        const prefix = detail.slice(0, colonIndex);
+                        const rest = detail.slice(colonIndex + 1);
+                        return (
+                          <li key={dIndex} className={styles.detailItem}>
+                            <strong className={styles.detailLabel}>{prefix}:</strong>{rest}
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={dIndex} className={styles.detailItem}>
+                          {detail}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}

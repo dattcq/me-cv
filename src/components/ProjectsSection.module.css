@@ -58,6 +58,12 @@
   line-height: 1.6;
 }
 
+.detailLabel {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: 0.3rem;
+}
+
 .techStackWrapper {
   margin-top: auto;
   padding-top: 1rem;

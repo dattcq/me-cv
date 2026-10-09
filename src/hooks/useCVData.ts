@@ -19,8 +19,9 @@ export interface UseCVDataReturn {
 }
 
 export function useCVData(): UseCVDataReturn {
-  const [cvData, setCvData] = useState<CVData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  // Render instantly with local data on first paint (0ms, no white screen)
+  const [cvData, setCvData] = useState<CVData>(initialCVData);
+  const loading = false;
   const error = "";
   const [lang, setLang] = useState<Language>(() => {
     if (typeof window !== "undefined") {
@@ -31,25 +32,33 @@ export function useCVData(): UseCVDataReturn {
   });
 
   useEffect(() => {
+    let isMounted = true;
+
     async function fetchData() {
       try {
         const docRef = doc(db, FIRESTORE_COLLECTION, FIRESTORE_DOCUMENT_ID);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
+
+        // Limit wait time to 3s to prevent hanging when offline or throttled
+        const fetchPromise = getDoc(docRef);
+        const timeoutPromise = new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error("Firestore fetch timeout")), 3000)
+        );
+
+        const docSnap = await Promise.race([fetchPromise, timeoutPromise]);
+        if (isMounted && docSnap.exists()) {
           const parsedData = CVDataSchema.parse(docSnap.data());
           setCvData(parsedData);
-        } else {
-          setCvData(initialCVData);
         }
       } catch (err: unknown) {
-        console.warn("Firestore fetch warning, using fallback local data:", err);
-        setCvData(initialCVData);
-      } finally {
-        setLoading(false);
+        console.warn("Firestore background sync note (using local CV data):", err);
       }
     }
 
     fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const changeLanguage = useCallback((newLang: Language) => {
